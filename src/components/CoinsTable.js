@@ -45,6 +45,7 @@ export default function CoinsTable() {
     pagination: {
       "& .MuiPaginationItem-root": {
         color: "gold",
+        direction:"ltr",
       },
     },
   });
@@ -85,15 +86,17 @@ export default function CoinsTable() {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      <Container style={{ textAlign: "center" }}>
+      <Container style={{ textAlign: "center", direction:"rtl"}}>
         <Typography
           variant="h4"
           style={{ margin: 18, fontFamily: "Montserrat" }}
         >
-          Cryptocurrency Prices by Market Cap
+          لیست قیمت لحظه ای ارزهای دیجیتال
         </Typography>
         <TextField
-          label="Search For a Crypto Currency.."
+        
+          id="coin-search-box"
+          label="اسم ارز یا اسم شبکه ارز ...  "
           variant="outlined"
           style={{ marginBottom: 20, width: "100%" }}
           onChange={(e) => setSearch(e.target.value)}
@@ -102,10 +105,10 @@ export default function CoinsTable() {
           {loading ? (
             <LinearProgress style={{ backgroundColor: "gold" }} />
           ) : (
-            <Table aria-label="simple table">
+            <Table aria-label="simple table" direction="ltr">
               <TableHead style={{ backgroundColor: "#EEBC1D" }}>
                 <TableRow>
-                  {["Coin", "Price", "24h Change", "Market Cap"].map((head) => (
+                  {["نام ارز", "قیمت لحظه ای", "تغییر در 24 ساعت اخیر", "ارزش کل"].map((head) => (
                     <TableCell
                       style={{
                         color: "black",
@@ -141,6 +144,10 @@ export default function CoinsTable() {
                           }}
                         >
                           <img
+                          style={{
+                            width:"15%",
+                            height:"auto"
+                          }}
                             src={row?.image}
                             alt={row.name}
                             height="50"
@@ -195,10 +202,12 @@ export default function CoinsTable() {
         <Pagination
           count={(handleSearch()?.length / 10).toFixed(0)}
           style={{
+            
             padding: 20,
             width: "100%",
             display: "flex",
             justifyContent: "center",
+            direction:"ltr",
           }}
           classes={{ ul: classes.pagination }}
           onChange={(_, value) => {

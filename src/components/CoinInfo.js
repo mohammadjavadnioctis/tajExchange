@@ -20,6 +20,7 @@ const CoinInfo = ({ coin }) => {
 
   const useStyles = makeStyles((theme) => ({
     container: {
+      direction: "rtl",
       width: "75%",
       display: "flex",
       flexDirection: "column",
@@ -85,7 +86,7 @@ const CoinInfo = ({ coin }) => {
                 datasets: [
                   {
                     data: historicData.map((coin) => coin[1]),
-                    label: `Price ( Past ${days} Days ) in ${currency}`,
+                    label: `قیمت در (${days} روز اخیر ) in ${currency}`,
                     borderColor: "#EEBC1D",
                   },
                 ],

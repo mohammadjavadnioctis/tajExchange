@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+
+#coin-search-box-label{
+  width: 15% !important;
+  right: 2%;
+  background-color: #14161a;
+}

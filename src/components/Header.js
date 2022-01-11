@@ -41,15 +41,16 @@ function Header() {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      <AppBar color="transparent" position="static">
-        <Container>
-          <Toolbar>
+      <AppBar color="transparent" position="static" direction="ltr">
+        <Container direction="ltr">
+          <Toolbar direction="ltr">
             <Typography
               onClick={() => history.push(`/`)}
               variant="h6"
               className={classes.title}
+              direction="ltr"
             >
-              Crypto Hunter
+              Taj Exchange
             </Typography>
             {/* <Button color="inherit">Login</Button> */}
             <Select
@@ -61,7 +62,7 @@ function Header() {
               onChange={(e) => setCurrency(e.target.value)}
             >
               <MenuItem value={"USD"}>USD</MenuItem>
-              <MenuItem value={"INR"}>INR</MenuItem>
+              <MenuItem value={"TRY"}>TRY</MenuItem>
             </Select>
           </Toolbar>
         </Container>

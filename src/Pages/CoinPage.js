@@ -35,6 +35,7 @@ const CoinPage = () => {
     },
     sidebar: {
       width: "30%",
+      direction:"rtl",
       [theme.breakpoints.down("md")]: {
         width: "100%",
       },
@@ -82,6 +83,8 @@ const CoinPage = () => {
 
   return (
     <div className={classes.container}>
+            <CoinInfo coin={coin} />
+
       <div className={classes.sidebar}>
         <img
           src={coin?.image.large}
@@ -98,7 +101,7 @@ const CoinPage = () => {
         <div className={classes.marketData}>
           <span style={{ display: "flex" }}>
             <Typography variant="h5" className={classes.heading}>
-              Rank:
+             رتبه :
             </Typography>
             &nbsp; &nbsp;
             <Typography
@@ -113,7 +116,7 @@ const CoinPage = () => {
 
           <span style={{ display: "flex" }}>
             <Typography variant="h5" className={classes.heading}>
-              Current Price:
+              قیمت فعلی :
             </Typography>
             &nbsp; &nbsp;
             <Typography
@@ -130,7 +133,7 @@ const CoinPage = () => {
           </span>
           <span style={{ display: "flex" }}>
             <Typography variant="h5" className={classes.heading}>
-              Market Cap:
+              ارزش کل در بازار
             </Typography>
             &nbsp; &nbsp;
             <Typography
@@ -150,7 +153,6 @@ const CoinPage = () => {
           </span>
         </div>
       </div>
-      <CoinInfo coin={coin} />
     </div>
   );
 };
