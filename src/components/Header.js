@@ -1,3 +1,5 @@
+import "./logo.css"
+
 import {
   AppBar,
   Container,
@@ -13,7 +15,7 @@ import {
 } from "@material-ui/core/styles";
 import { useHistory } from "react-router-dom";
 import { CryptoState } from "../CryptoContext";
-
+import Box from '@mui/material/Box';
 const useStyles = makeStyles((theme) => ({
   title: {
     flex: 1,
@@ -21,6 +23,10 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Montserrat",
     fontWeight: "bold",
     cursor: "pointer",
+    width: "20vw",
+    border: "3px solid white"
+  
+    
   },
 }));
 
@@ -41,18 +47,43 @@ function Header() {
 
   return (
     <ThemeProvider theme={darkTheme}>
-      <AppBar color="transparent" position="static" direction="ltr">
-        <Container direction="ltr">
-          <Toolbar direction="ltr">
+      <AppBar color="transparent" position="static" >
+        <Container>
+          <Toolbar>
+          <Box
+              sx={{
+              width: "100%" ,
+              border : " 3px solid white",
+              display: 'flex',
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+              '&:hover': {
+                backgroundColor: 'primary.main',
+                opacity: [0.9, 0.8, 0.7],
+              },
+            }}
+          >
+          <Box
+              sx={{
+              width: "20vw" ,
+              '&:hover': {
+                backgroundColor: 'primary.main',
+                opacity: [0.9, 0.8, 0.7],
+              },
+            }}
+          >
             <Typography
               onClick={() => history.push(`/`)}
               variant="h6"
               className={classes.title}
-              direction="ltr"
+              style={{ width: "100%", height: 40, marginLeft: 15 }}
+
+              
             >
               Taj Exchange
             </Typography>
-            {/* <Button color="inherit">Login</Button> */}
+            </Box>
+            {/* { <Button color="inherit">Login</Button>} */}
             <Select
               variant="outlined"
               labelId="demo-simple-select-label"
@@ -64,6 +95,7 @@ function Header() {
               <MenuItem value={"USD"}>USD</MenuItem>
               <MenuItem value={"TRY"}>TRY</MenuItem>
             </Select>
+            </Box>
           </Toolbar>
         </Container>
       </AppBar>
