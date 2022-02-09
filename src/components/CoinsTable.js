@@ -91,7 +91,7 @@ export default function CoinsTable() {
           variant="h4"
           style={{ margin: 18, fontFamily: "Montserrat" }}
         >
-          لیست قیمت لحظه ای ارزهای دیجیتال
+          ترند مارکت 
         </Typography>
         <TextField
         
